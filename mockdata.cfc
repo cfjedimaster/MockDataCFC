@@ -34,8 +34,8 @@ component {
 		if(type == "email") {
 			var fname = generateFirstName().toLowerCase();
 			var lname = generateLastName().toLowerCase();
-			var emailPrefix = fname.charAt(0) + lname;
-			return emailPrefix & "@" & emailDomains[randRange(1, emailDomains.length)];
+			var emailPrefix = fname.charAt(1) & lname;
+			return emailPrefix & "@" & emailDomains[randRange(1, emailDomains.len())];
 		}
 		if(type == "ssn") {
 			return randRange(1,9) & randRange(1,9) & randRange(1,9) & "-" &
@@ -80,11 +80,8 @@ component {
 
 	function generateNewItem(model) {
 		var result = {};
-	
-		for(var i=1; i <= model.len(); i++) {
-			//Based on each field prop, do something
-			var field = model[i];
-	
+
+		model.each(function(field) {
 			if(!field.keyExists("name")) {
 				field.name = "field"&i;
 			}
@@ -94,9 +91,9 @@ component {
 				if(isDefault(field.name)) field.type = field.name;
 			}
 			result[field.name] = generateFakeData(field.type);
-	
-		}
-	
+			
+		});
+		
 		return result;
 	}
 	
