@@ -63,7 +63,7 @@ component {
 			items.deleteAt(1);
 			return items[randRange(1,items.len())];
 		}
-		if(type.find("lorem") == 0) {
+		if(type.find("lorem") == 1) {
 			if(type == "lorem") return lorem;
 			if(type.find(":") > 1) {
 				var parts = type.listToArray(":");
