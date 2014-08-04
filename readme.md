@@ -11,3 +11,5 @@ http://localhost:8501/mock/mockdata.cfc?person=name
 
 Notice that you do not need to pass either the method or return type. The CFC automatically selects
 the mock method and automatically returns JSON. 
+
+MockData CFC requires ColdFusion 11. And ponies.
