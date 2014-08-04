@@ -103,7 +103,7 @@ component {
 	remote function mock() returnformat="json" {
 		
 		//Did they specify how many they want?
-		if(!structKeyExists(arguments, "num")) arguments.num = 10;
+		if(!arguments.keyExists("num")) arguments.num = 10;
 
 		if(!isNumeric(arguments.num) && arguments.num.find(":") > 0) {
 			var parts = arguments.num.listToArray(":");
