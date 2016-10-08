@@ -104,7 +104,7 @@ component {
 			}
 		}
 		if(type.find("sentence") == 1) {
-			if(type == "sentence") return sentences[ randRange( 1, arrayLen( sentences ) ];
+			if(type == "sentence") return sentences[ randRange( 1, arrayLen( sentences ) ) ];
 			if(type.find(":") > 1) {
 				var parts = type.listToArray( ":" );
 				var result = "";
